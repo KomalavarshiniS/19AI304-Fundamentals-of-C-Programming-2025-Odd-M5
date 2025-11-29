@@ -39,7 +39,41 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void swapv(int x, int y) {
+    int temp = x;
+    x = y;
+    y = temp;
+    printf("Inside swapv: x=%d, y=%d\n", x, y);
+}
+
+void swapr(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+    printf("Inside swapr: *x=%d, *y=%d\n", *x, *y);
+}
+
+int main() {
+    int a = 10, b = 20;
+
+    printf("Before swapv: a=%d, b=%d\n", a, b);
+    swapv(a, b);
+    printf("After swapv: a=%d, b=%d\n", a, b);
+
+    printf("Before swapr: a=%d, b=%d\n", a, b);
+    swapr(&a, &b);
+    printf("After swapr: a=%d, b=%d\n", a, b);
+
+    return 0;
+}
+
+```
 # Output:
+<img width="522" height="224" alt="image" src="https://github.com/user-attachments/assets/566342a7-b909-44dd-accf-8219d1d05891" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +111,28 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int fibo(int x) {
+    if(x == 0 || x == 1)
+        return x;
+    return fibo(x-1) + fibo(x-2);
+}
+
+int main() {
+    int n, i;
+    scanf("%d", &n);
+    printf("Fibonacci Series: ");
+    for(i = 0; i < n; i++)
+        printf("%d ", fibo(i));
+    return 0;
+}
+
+```
 # Output:
+<img width="458" height="119" alt="image" src="https://github.com/user-attachments/assets/339a6c98-d783-470d-aa76-370df272282a" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +174,31 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void printEvenOdd(int cur, int limit) {
+    if(cur > limit) return;
+    if(cur == limit)
+        printf("%d", cur);
+    else
+        printf("%d, ", cur);
+    printEvenOdd(cur + 2, limit);
+}
+
+int main() {
+    int lowerLimit, upperLimit;
+    scanf("%d", &lowerLimit);
+    scanf("%d", &upperLimit);
+    printf("Numbers: ");
+    printEvenOdd(lowerLimit, upperLimit);
+    return 0;
+}
+
+```
 # Output:
+<img width="416" height="94" alt="image" src="https://github.com/user-attachments/assets/0d5d9f61-98e0-4c8b-bb3d-fdff53836ea2" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +240,34 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr, n, i, sum = 0;
+    scanf("%d", &n);
+
+    ptr = (int*)calloc(n, sizeof(int));
+    if(ptr == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    for(i = 0; i < n; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", ptr + i);
+        sum += *(ptr + i);
+    }
+
+    printf("Sum = %d\n", sum);
+    free(ptr);
+    return 0;
+}
+```
 # Output:
+<img width="614" height="104" alt="image" src="https://github.com/user-attachments/assets/96c45f1f-4015-4bb4-9097-a60b57df5a12" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +303,27 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void displayArray(int *arr, int size) {
+    printf("Array elements: ");
+    for(int i = 0; i < size; i++)
+        printf("%d ", *(arr + i));
+    printf("\n");
+}
+
+int main() {
+    int arr[5], i;
+    for(i = 0; i < 5; i++)
+        scanf("%d", &arr[i]);
+    displayArray(arr, 5);
+    return 0;
+}
+
+```
 # Output:
+<img width="425" height="113" alt="image" src="https://github.com/user-attachments/assets/91894fc5-15c6-4a62-9f86-ca092b66a32b" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
